@@ -16,6 +16,11 @@ class HashMap {
         const hashBucket = this.hash(key);
         this.hashmap[hashBucket] = value;
     }
+
+    retrieve(key) {
+        const hashBucket = this.hash(key);
+        return this.hashmap[hashBucket];
+    }
 };
 
 const myHashMap = new HashMap(5);
@@ -23,3 +28,4 @@ myHashMap.assign('Persistence', 'never giving up, even in the face of obstacles'
 myHashMap.assign('Growth Mindset', 'the belief that you can always continue to improve');
 
 console.log(myHashMap.hashmap);
+console.log(myHashMap.retrieve('Persistence'));
